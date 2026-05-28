@@ -1,9 +1,0 @@
-Origin: GlitchLord Repo
-Label: GlitchLord Repo
-Suite: stable
-Version: 1.0
-Codename: ios
-Architectures: iphoneos-arm
-Components: main
-Description: GlitchLord Cydia Repo
-Date: Thu, 28 May 2026 08:15:21 +0000
