@@ -1,0 +1,18 @@
+Origin: GlitchLord Repo
+Label: GlitchLord Repo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm
+Components: main
+Description: GlitchLord Cydia Repository
+Date: Thu, 28 May 2026 06:16:11 GMT
+MD5Sum:
+ 4d4a87dc637d6692b660db2f412a2c99 790 Packages
+ 34afd83a447889d277d54bb4f048ef3e 589 Packages.bz2
+SHA1:
+ a6f4bd4024733bbf5bbc9abeaa4f7540ac3e446c 790 Packages
+ bd3ecb1f3b998e96ab1278a19061dc5f94a18d1f 589 Packages.bz2
+SHA256:
+ e316dd06192b9273f971993e9be36dfa55b3f969fe5519f72110bc5e7d97e8fd 790 Packages
+ 5e19019a13779cd5da052612ee674703e46a4e3d7b2ee94cea00409b883ed4a7 589 Packages.bz2
