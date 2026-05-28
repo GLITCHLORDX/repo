@@ -1,0 +1,14 @@
+Package: com.glitchlord.depthclockxi
+Name: DepthClockXI
+Description: Native iOS 12 lockscreen custom depth clock base tweak.
+Maintainer: GlitchLord <glitchlord@example.com>
+Author: GlitchLord
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 12.0)
+Architecture: iphoneos-arm
+Version: 0.1.0
+Installed-Size: 56
+Filename: debs/com.glitchlord.depthclockxi_0.1.0_iphoneos-arm.deb
+Size: 6236
+MD5sum: caaf74056663d3d88a473a7f2c86392a
+SHA256: deba401db93a815b01751dc8e3c8d04b8666a84390141edcdfe685d37b68688e
