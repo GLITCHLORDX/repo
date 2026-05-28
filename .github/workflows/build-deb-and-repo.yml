@@ -1,0 +1,54 @@
+name: Build DepthClockXI Deb and Repo
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          brew update
+          brew install ldid dpkg xz
+
+      - name: Install Theos
+        run: |
+          git clone --recursive https://github.com/theos/theos.git $HOME/theos
+          echo "THEOS=$HOME/theos" >> $GITHUB_ENV
+
+      - name: Build package
+        run: |
+          make clean package FINALPACKAGE=1
+
+      - name: Move deb to repo folder
+        run: |
+          mkdir -p repo/debs
+          cp packages/*.deb repo/debs/
+          ls -la repo/debs
+
+      - name: Create Packages files
+        run: |
+          python3 scripts/create_packages.py repo
+          ls -la repo
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DepthClockXI-deb-and-repo
+          path: |
+            packages/*.deb
+            repo/**
+
+      - name: Deploy repo to GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./repo
